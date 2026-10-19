@@ -38,7 +38,7 @@ type Cat = "todos" | "casas" | "arriendos" | "herramientas" | "vehiculos" | "mud
 const CATS: { id: Cat; label: string; img: string }[] = [
   { id: "todos", label: "Todos", img: casaDosPisos },
   { id: "casas", label: "Casas en venta", img: casa },
-  { id: "arriendos", label: "Arriendos", img: casaModerna },
+  { id: "arriendos", label: "Arriendos", img: casaDosPisos },
   { id: "herramientas", label: "Herramientas", img: herramientas },
   { id: "vehiculos", label: "Carros y motos", img: carroFamiliar },
   { id: "mudanzas", label: "Mudanzas", img: camion },
