@@ -45,7 +45,7 @@ const CATS: { id: Cat; label: string; img: string }[] = [
 ];
 const ITEMS = [
   { cat: "casas", t: "Casa bagreña en el centro", d: "3 habitaciones, corredor amplio y techo en zinc.", p: "Desde $150.000.000", img: casa },
-  { cat: "arriendos", t: "Casa de dos pisos para la familia", d: "Real y detallada: balcón amplio, 3 habitaciones, corredor y jardín para la familia.", p: "$800.000 / mes", img: casaDosPisos },
+  { cat: "arriendos", t: "Casa de dos pisos para la familia", d: "Balcón amplio, 3 habitaciones, corredor y jardín, ideal para la familia.", p: "$800.000 / mes", img: casaDosPisos },
   { cat: "herramientas", t: "Guadaña y motobomba", d: "Para fincas, lotes y trabajos de campo.", p: "$50.000 / día", img: herramientas },
   { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
   { cat: "vehiculos", t: "Carro familiar para paseos", d: "Camioneta gris cómoda y espaciosa, para paseos en familia.", p: "$180.000 / día", img: carroFamiliar },
