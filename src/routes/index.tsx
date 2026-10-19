@@ -1,9 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type FormEvent, type MouseEvent, type ReactNode } from "react";
-import casa from "@/assets/casa.png";
+import casaModerna from "@/assets/casa.png";
 import carro from "@/assets/carro.png";
-import moto from "@/assets/moto.png";
-import herramientas from "@/assets/herramientas.png";
+import casa from "@/assets/casa-bagre.png";
+import camion from "@/assets/camion.png";
+import moto from "@/assets/moto-mandados.png";
+import motoSport from "@/assets/moto.png";
+import herramientas from "@/assets/herramientas-bagre.png";
+import mercado from "@/assets/mercado.png";
+import electro from "@/assets/electro.png";
+import moda from "@/assets/moda.png";
 
 // Cambia estos datos por los reales del negocio
 const WHATSAPP = "573001234567";
@@ -28,21 +34,34 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Cat = "todos" | "casas" | "arriendos" | "herramientas" | "vehiculos";
+type Cat = "todos" | "casas" | "arriendos" | "herramientas" | "vehiculos" | "mudanzas";
 const CATS: { id: Cat; label: string; img: string }[] = [
-  { id: "todos", label: "Todos", img: casa },
+  { id: "todos", label: "Todos", img: casaModerna },
   { id: "casas", label: "Casas en venta", img: casa },
-  { id: "arriendos", label: "Arriendos", img: casa },
+  { id: "arriendos", label: "Arriendos", img: casaModerna },
   { id: "herramientas", label: "Herramientas", img: herramientas },
   { id: "vehiculos", label: "Carros y motos", img: carro },
+  { id: "mudanzas", label: "Mudanzas", img: camion },
 ];
 const ITEMS = [
-  { cat: "casas", t: "Casa familiar en el centro", d: "3 habitaciones, 2 baños, patio amplio.", p: "Desde $180.000.000", img: casa },
-  { cat: "arriendos", t: "Apartamento en arriendo", d: "2 habitaciones, cerca al parque principal.", p: "$650.000 / mes", img: casa },
-  { cat: "herramientas", t: "Kit de herramientas", d: "Taladro, martillo y llaves para tu obra.", p: "$35.000 / día", img: herramientas },
+  { cat: "casas", t: "Casa bagreña en el centro", d: "3 habitaciones, corredor amplio y techo en zinc.", p: "Desde $150.000.000", img: casa },
+  { cat: "arriendos", t: "Casa de dos pisos en arriendo", d: "Balcón, 3 habitaciones, barrio tranquilo.", p: "$800.000 / mes", img: casaModerna },
+  { cat: "herramientas", t: "Guadaña y motobomba", d: "Para fincas, lotes y trabajos de campo.", p: "$50.000 / día", img: herramientas },
+  { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
   { cat: "vehiculos", t: "Carro para alquilar", d: "Sedán cómodo para viajes y diligencias.", p: "$180.000 / día", img: carro },
-  { cat: "vehiculos", t: "Moto para alquilar", d: "Económica y ágil para moverte por el pueblo.", p: "$60.000 / día", img: moto },
-  { cat: "casas", t: "Casa campestre", d: "Lote amplio, zona fresca y tranquila.", p: "Consultar precio", img: casa },
+  { cat: "vehiculos", t: "Moto de trabajo", d: "Económica y ágil, ideal para el pueblo.", p: "$50.000 / día", img: moto },
+  { cat: "vehiculos", t: "Moto deportiva", d: "Potencia y estilo para viajes largos.", p: "$90.000 / día", img: motoSport },
+  { cat: "mudanzas", t: "Camión para mudanzas", d: "Trasteos locales y a otros municipios, con ayudantes.", p: "Desde $250.000", img: camion },
+];
+
+const PCATS = ["Todos", "Mercado", "Tecnología y hogar", "Moda y estilo"] as const;
+const PRODUCTS = [
+  { c: "Mercado", t: "Mercado completo", d: "Arroz, café, frutas y verduras frescas.", p: "$120.000", img: mercado },
+  { c: "Mercado", t: "Canasta de frutas", d: "Selección de temporada.", p: "$35.000", img: mercado },
+  { c: "Tecnología y hogar", t: "Ventilador de pie", d: "Ideal para el calor bagreño.", p: "$160.000", img: electro },
+  { c: "Tecnología y hogar", t: "Combo hogar", d: "Licuadora, TV y celular.", p: "Consultar", img: electro },
+  { c: "Moda y estilo", t: "Tenis y ropa", d: "Lo último en tendencia.", p: "Desde $90.000", img: moda },
+  { c: "Moda y estilo", t: "Perfumes y accesorios", d: "Regalos con buen gusto.", p: "Desde $60.000", img: moda },
 ];
 
 const FAQ = [
@@ -88,6 +107,7 @@ function Index() {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState<number | null>(0);
   useReveal();
+  const [pc, setPc] = useState<(typeof PCATS)[number]>("Todos");
   const list = useMemo(
     () => ITEMS.filter((i) => (cat === "todos" || i.cat === cat) && (i.t + i.d).toLowerCase().includes(q.toLowerCase())),
     [cat, q],
@@ -106,7 +126,7 @@ function Index() {
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
           <a href="#inicio" className="font-display text-2xl font-extrabold text-accent">EL BAGRE <span className="text-primary-foreground">ENCUENTRA</span> 📍</a>
           <nav className="flex flex-wrap gap-5 text-sm font-semibold">
-            {[["inicio", "Inicio"], ["servicios", "Servicios"], ["catalogo", "Anuncios"], ["faq", "Preguntas"], ["asesoria", "Asesoría"], ["contacto", "Contacto"]].map(([id, l]) => (
+            {[["inicio", "Inicio"], ["servicios", "Servicios"], ["catalogo", "Anuncios"], ["mandados", "Mandados"], ["productos", "Productos"], ["faq", "Preguntas"], ["asesoria", "Asesoría"], ["contacto", "Contacto"]].map(([id, l]) => (
               <a key={id} href={`#${id}`} className="hover:text-accent">{l}</a>
             ))}
           </nav>
@@ -119,7 +139,7 @@ function Index() {
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Tu municipio, tus oportunidades</p>
             <h1 className="my-5 text-4xl font-extrabold leading-tight md:text-6xl">¡El Bagre <span className="text-shine">encuentra</span> lo que necesitas!</h1>
-            <p className="max-w-lg text-lg opacity-90">¿Buscas casa, arriendo, herramientas, carro o moto? Te ayudamos con buena asesoría, atención cercana y un detalle especial para nuestros clientes.</p>
+            <p className="max-w-lg text-lg opacity-90">¿Buscas casa, arriendo, herramientas, carro, moto, camión para mudanza o un mandado rápido? Te ayudamos con buena asesoría, atención cercana y un detalle especial para nuestros clientes.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#catalogo" className={`${btn} bg-gold text-accent-foreground shadow-gold`}>🔎 Explorar anuncios</a>
               <a href={wa("Hola, quiero recibir asesoría")} target="_blank" rel="noopener noreferrer" className={`${btn} bg-whatsapp text-primary-foreground`}><Icon name="wa" /> Escríbenos</a>
@@ -127,7 +147,7 @@ function Index() {
             <div className="mt-8"><Socials /></div>
           </div>
           <div className="relative grid grid-cols-2 gap-4">
-            {[casa, carro, moto, herramientas].map((src, i) => (
+            {[casa, camion, moto, herramientas].map((src, i) => (
               <Tilt key={i} className="glass rounded-3xl p-3 shadow-3d">
                 <img src={src} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" style={{ animationDelay: `${i * 0.8}s` }} />
               </Tilt>
@@ -146,7 +166,7 @@ function Index() {
 
       <section id="servicios" className="mx-auto max-w-6xl px-5 py-16">
         <Title h="¿Qué estás buscando?" p="Todo en un solo lugar, al servicio de nuestra gente." />
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-6">
           {CATS.map((c) => (
             <button key={c.id} onClick={() => { setCat(c.id); document.getElementById("catalogo")?.scrollIntoView(); }}
               className={`group rounded-2xl border p-4 text-center shadow-3d transition hover:-translate-y-1 ${cat === c.id ? "bg-primary text-primary-foreground" : "bg-card"}`}>
@@ -185,6 +205,49 @@ function Index() {
             ))}
           </div>
           <p className="mt-6 text-center text-xs text-muted-foreground">Anuncios de ejemplo. Precios y disponibilidad se confirman por WhatsApp.</p>
+        </div>
+      </section>
+
+      <section id="mandados" className="bg-hero relative overflow-hidden py-16 text-primary-foreground">
+        <div className="blob blob-a" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2">
+          <Tilt className="reveal"><img src={moto} alt="Moto de mandados" loading="lazy" width={1024} height={1024} className="float-3d mx-auto max-h-96 w-auto drop-shadow-2xl" /></Tilt>
+          <div className="reveal">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">⚡ Nuevo servicio</p>
+            <h2 className="my-4 text-4xl font-extrabold md:text-5xl">Mandados <span className="text-shine">ultra veloz</span></h2>
+            <p className="text-lg opacity-90">Para lo que necesites: domicilios, compras, pagos, documentos, medicamentos y encomiendas por todo El Bagre.</p>
+            <ul className="my-6 grid grid-cols-2 gap-3 text-sm font-semibold">
+              {["🛵 Domicilios", "🛒 Compras", "💊 Droguería", "📄 Diligencias", "📦 Encomiendas", "💵 Pagos"].map((x) => <li key={x} className="glass rounded-xl px-4 py-3">{x}</li>)}
+            </ul>
+            <a href={wa("Hola, necesito un mandado ultra veloz")} target="_blank" rel="noopener noreferrer" className={`${btn} bg-gold text-accent-foreground shadow-gold`}>⚡ Pedir mandado ya</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="productos" className="py-16">
+        <div className="mx-auto max-w-6xl px-5">
+          <Title h="Catálogo de productos" p="Productos seleccionados para clientes de buen gusto." />
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
+            {PCATS.map((c) => (
+              <button key={c} onClick={() => setPc(c)} className={`rounded-full border px-5 py-2 text-sm font-semibold transition ${pc === c ? "bg-primary text-primary-foreground" : "bg-card hover:bg-muted"}`}>{c}</button>
+            ))}
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {PRODUCTS.filter((x) => pc === "Todos" || x.c === pc).map((x) => (
+              <Tilt key={x.t}><article className="group flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-3d">
+                <div className="bg-card3d relative grid h-56 place-items-center p-4">
+                  <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">{x.c}</span>
+                  <img src={x.img} alt={x.t} loading="lazy" width={1024} height={1024} className="h-full w-auto object-contain drop-shadow-2xl transition duration-500 group-hover:scale-110" />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="text-xl font-bold text-primary">{x.t}</h3>
+                  <p className="mb-3 mt-1 text-sm text-muted-foreground">{x.d}</p>
+                  <p className="mb-4 text-lg font-bold text-secondary">{x.p}</p>
+                  <a href={wa(`Hola, quiero pedir: ${x.t} (${x.p})`)} target="_blank" rel="noopener noreferrer" className={`${btn} mt-auto bg-whatsapp text-primary-foreground`}><Icon name="wa" /> Pedir por WhatsApp</a>
+                </div>
+              </article></Tilt>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -235,7 +298,7 @@ function Index() {
             <Field label="¿Qué servicio necesitas?">
               <select required name="servicio" defaultValue="" className="w-full rounded-xl border bg-card px-4 py-3">
                 <option value="" disabled>Selecciona una opción</option>
-                {["Comprar una casa", "Arrendar una vivienda", "Alquilar herramientas", "Alquilar un carro", "Alquilar una moto", "Publicar una propiedad", "Otra consulta"].map((o) => <option key={o}>{o}</option>)}
+                {["Comprar una casa", "Arrendar una vivienda", "Alquilar herramientas", "Alquilar un carro", "Alquilar una moto", "Mudanza / trasteo", "Mandado ultra veloz", "Comprar productos", "Publicar una propiedad", "Otra consulta"].map((o) => <option key={o}>{o}</option>)}
               </select>
             </Field>
             <Field label="Presupuesto aproximado (opcional)"><input name="presupuesto" className="w-full rounded-xl border px-4 py-3" /></Field>
