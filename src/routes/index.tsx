@@ -5,7 +5,7 @@ import carro from "@/assets/carro.png";
 import casa from "@/assets/casa-bagre.png";
 import camion from "@/assets/camion.png";
 import moto from "@/assets/moto-mandados.png";
-import motoSport from "@/assets/moto.png";
+import motoBoxer from "@/assets/moto-boxer.png";
 import herramientas from "@/assets/herramientas-bagre.png";
 import mercado from "@/assets/mercado.png";
 import electro from "@/assets/electro.png";
@@ -50,7 +50,7 @@ const ITEMS = [
   { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
   { cat: "vehiculos", t: "Carro para alquilar", d: "Sedán cómodo para viajes y diligencias.", p: "$180.000 / día", img: carro },
   { cat: "vehiculos", t: "Moto de trabajo", d: "Económica y ágil, ideal para el pueblo.", p: "$50.000 / día", img: moto },
-  { cat: "vehiculos", t: "Moto deportiva", d: "Potencia y estilo para viajes largos.", p: "$90.000 / día", img: motoSport },
+  { cat: "vehiculos", t: "Boxer CT negra", d: "Moto de trabajo fuerte y económica, para el pueblo y la finca.", p: "$50.000 / día", img: motoBoxer },
   { cat: "mudanzas", t: "Camión para mudanzas", d: "Trasteos locales y a otros municipios, con ayudantes.", p: "Desde $250.000", img: camion },
 ];
 
