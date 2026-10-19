@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type FormEvent, type MouseEvent, type ReactNode } from "react";
 import casaModerna from "@/assets/casa.png";
-import carro from "@/assets/carro.png";
+import carroFamiliar from "@/assets/carro-familiar.png";
 import casa from "@/assets/casa-bagre.png";
 import camion from "@/assets/camion.png";
 import moto from "@/assets/moto-mandados.png";
@@ -40,7 +40,7 @@ const CATS: { id: Cat; label: string; img: string }[] = [
   { id: "casas", label: "Casas en venta", img: casa },
   { id: "arriendos", label: "Arriendos", img: casaModerna },
   { id: "herramientas", label: "Herramientas", img: herramientas },
-  { id: "vehiculos", label: "Carros y motos", img: carro },
+  { id: "vehiculos", label: "Carros y motos", img: carroFamiliar },
   { id: "mudanzas", label: "Mudanzas", img: camion },
 ];
 const ITEMS = [
@@ -48,7 +48,7 @@ const ITEMS = [
   { cat: "arriendos", t: "Casa de dos pisos en arriendo", d: "Balcón, 3 habitaciones, barrio tranquilo.", p: "$800.000 / mes", img: casaModerna },
   { cat: "herramientas", t: "Guadaña y motobomba", d: "Para fincas, lotes y trabajos de campo.", p: "$50.000 / día", img: herramientas },
   { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
-  { cat: "vehiculos", t: "Carro para alquilar", d: "Sedán cómodo para viajes y diligencias.", p: "$180.000 / día", img: carro },
+  { cat: "vehiculos", t: "Carro familiar para paseos", d: "Camioneta gris cómoda y espaciosa, para paseos en familia.", p: "$180.000 / día", img: carroFamiliar },
   { cat: "vehiculos", t: "Moto de trabajo", d: "Económica y ágil, ideal para el pueblo.", p: "$50.000 / día", img: moto },
   { cat: "vehiculos", t: "Boxer CT negra", d: "Moto de trabajo fuerte y económica, para el pueblo y la finca.", p: "$50.000 / día", img: motoBoxer },
   { cat: "mudanzas", t: "Camión para mudanzas", d: "Trasteos locales y a otros municipios, con ayudantes.", p: "Desde $250.000", img: camion },
