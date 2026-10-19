@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 
 type Cat = "todos" | "casas" | "arriendos" | "herramientas" | "vehiculos" | "mudanzas";
 const CATS: { id: Cat; label: string; img: string }[] = [
-  { id: "todos", label: "Todos", img: casaModerna },
+  { id: "todos", label: "Todos", img: casaDosPisos },
   { id: "casas", label: "Casas en venta", img: casa },
   { id: "arriendos", label: "Arriendos", img: casaModerna },
   { id: "herramientas", label: "Herramientas", img: herramientas },
