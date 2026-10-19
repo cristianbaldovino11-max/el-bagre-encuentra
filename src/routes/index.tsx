@@ -237,7 +237,7 @@ function Index() {
               <Tilt key={x.t}><article className="group flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-3d">
                 <div className="bg-card3d relative grid h-48 place-items-center p-3">
                   <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">{x.c}</span>
-                  <img src={x.img} alt={x.t} loading="lazy" width={1024} height={1024} className="h-full w-auto object-contain drop-shadow-2xl transition duration-500 group-hover:scale-110" />
+                  <img src={x.img} alt={x.t} loading="lazy" width={1024} height={1024} className="max-h-40 w-auto max-w-full object-contain drop-shadow-xl transition duration-500 group-hover:scale-105" />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-xl font-bold text-primary">{x.t}</h3>
