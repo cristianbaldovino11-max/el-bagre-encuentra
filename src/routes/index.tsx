@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent, type MouseEvent, type ReactNode } from "react";
 import casa from "@/assets/casa.png";
 import carro from "@/assets/carro.png";
 import moto from "@/assets/moto.png";
 import herramientas from "@/assets/herramientas.png";
 
 // Cambia estos datos por los reales del negocio
-const WHATSAPP = "573000000000";
+const WHATSAPP = "573001234567";
 const SOCIAL = {
   facebook: "https://facebook.com/elbagreencuentra",
   instagram: "https://instagram.com/elbagreencuentra",
@@ -87,6 +87,7 @@ function Index() {
   const [cat, setCat] = useState<Cat>("todos");
   const [q, setQ] = useState("");
   const [open, setOpen] = useState<number | null>(0);
+  useReveal();
   const list = useMemo(
     () => ITEMS.filter((i) => (cat === "todos" || i.cat === cat) && (i.t + i.d).toLowerCase().includes(q.toLowerCase())),
     [cat, q],
@@ -101,7 +102,7 @@ function Index() {
 
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-30 bg-deep/95 text-primary-foreground backdrop-blur">
+      <header className="glass-dark sticky top-0 z-30 text-primary-foreground backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
           <a href="#inicio" className="font-display text-2xl font-extrabold text-accent">EL BAGRE <span className="text-primary-foreground">ENCUENTRA</span> 📍</a>
           <nav className="flex flex-wrap gap-5 text-sm font-semibold">
@@ -112,11 +113,12 @@ function Index() {
         </div>
       </header>
 
-      <section id="inicio" className="bg-hero text-primary-foreground">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2">
+      <section id="inicio" className="bg-hero relative overflow-hidden text-primary-foreground">
+        <div className="blob blob-a" /><div className="blob blob-b" /><div className="grid-lines" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Tu municipio, tus oportunidades</p>
-            <h1 className="my-5 text-4xl font-extrabold leading-tight md:text-6xl">¡El Bagre encuentra lo que necesitas!</h1>
+            <h1 className="my-5 text-4xl font-extrabold leading-tight md:text-6xl">¡El Bagre <span className="text-shine">encuentra</span> lo que necesitas!</h1>
             <p className="max-w-lg text-lg opacity-90">¿Buscas casa, arriendo, herramientas, carro o moto? Te ayudamos con buena asesoría, atención cercana y un detalle especial para nuestros clientes.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#catalogo" className={`${btn} bg-gold text-accent-foreground shadow-gold`}>🔎 Explorar anuncios</a>
@@ -126,9 +128,9 @@ function Index() {
           </div>
           <div className="relative grid grid-cols-2 gap-4">
             {[casa, carro, moto, herramientas].map((src, i) => (
-              <div key={i} className="rounded-3xl bg-primary-foreground/10 p-3 shadow-3d backdrop-blur" style={{ animationDelay: `${i * 0.8}s` }}>
+              <Tilt key={i} className="glass rounded-3xl p-3 shadow-3d">
                 <img src={src} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" style={{ animationDelay: `${i * 0.8}s` }} />
-              </div>
+              </Tilt>
             ))}
           </div>
         </div>
@@ -167,7 +169,7 @@ function Index() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {list.length === 0 && <p className="col-span-full py-8 text-center text-muted-foreground">No encontramos resultados. ¡Escríbenos y lo buscamos por ti!</p>}
             {list.map((i) => (
-              <article key={i.t} className="group flex flex-col overflow-hidden rounded-3xl border bg-card shadow-3d">
+              <Tilt key={i.t} className="reveal"><article className="group flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-3d">
                 <div className="bg-card3d grid h-52 place-items-center p-4">
                   <img src={i.img} alt={i.t} loading="lazy" width={1024} height={1024} className="h-full w-auto object-contain drop-shadow-2xl transition duration-500 group-hover:-translate-y-2 group-hover:scale-105" />
                 </div>
@@ -179,7 +181,7 @@ function Index() {
                     <Icon name="wa" /> Me interesa
                   </a>
                 </div>
-              </article>
+              </article></Tilt>
             ))}
           </div>
           <p className="mt-6 text-center text-xs text-muted-foreground">Anuncios de ejemplo. Precios y disponibilidad se confirman por WhatsApp.</p>
@@ -191,7 +193,7 @@ function Index() {
           <Title h="¿Por qué elegirnos?" p="Queremos ser una marca reconocida y querida en El Bagre." />
           <div className="grid gap-5 md:grid-cols-3">
             {[["🤝", "Buena asesoría", "Te escuchamos y orientamos para que elijas la mejor opción."], ["🎁", "Un detalle especial", "Agradecemos tu confianza con un pequeño detalle en cada negocio."], ["📍", "Orgullo bagreño", "Conectamos compradores, propietarios y quienes necesitan alquilar."]].map(([e, h, p]) => (
-              <div key={h} className="rounded-2xl bg-card p-7 text-center shadow-3d"><span className="text-4xl">{e}</span><h3 className="my-2 text-xl font-bold text-primary">{h}</h3><p className="text-sm text-muted-foreground">{p}</p></div>
+              <div key={h} className="reveal rounded-2xl bg-card p-7 text-center shadow-3d"><span className="text-4xl">{e}</span><h3 className="my-2 text-xl font-bold text-primary">{h}</h3><p className="text-sm text-muted-foreground">{p}</p></div>
             ))}
           </div>
         </div>
@@ -202,7 +204,7 @@ function Index() {
           <Title h="Lo que dicen nuestros clientes" p="Opiniones de ejemplo." />
           <div className="grid gap-5 md:grid-cols-3">
             {[["María G.", "Encontré mi arriendo en dos días. ¡Muy amables!"], ["Carlos R.", "Alquilé una moto para trabajar, todo claro y rápido."], ["Luz P.", "Me ayudaron a vender mi casa con buena asesoría."]].map(([n, t]) => (
-              <figure key={n} className="rounded-2xl border bg-card p-6 shadow-3d"><p className="text-accent">★★★★★</p><blockquote className="my-3">“{t}”</blockquote><figcaption className="text-sm font-semibold text-primary">{n}</figcaption></figure>
+              <figure key={n} className="reveal rounded-2xl border bg-card p-6 shadow-3d"><p className="text-accent">★★★★★</p><blockquote className="my-3">“{t}”</blockquote><figcaption className="text-sm font-semibold text-primary">{n}</figcaption></figure>
             ))}
           </div>
         </div>
@@ -265,8 +267,30 @@ function Index() {
   );
 }
 
+function Tilt({ children, className = "" }: { children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const move = (e: MouseEvent<HTMLDivElement>) => {
+    const el = ref.current; if (!el) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(900px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateZ(0)`;
+    el.style.setProperty("--mx", `${(x + 0.5) * 100}%`); el.style.setProperty("--my", `${(y + 0.5) * 100}%`);
+  };
+  const leave = () => { if (ref.current) ref.current.style.transform = ""; };
+  return <div ref={ref} onMouseMove={move} onMouseLeave={leave} className={`tilt-3d ${className}`}>{children}</div>;
+}
+
+function useReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && e.target.classList.add("is-visible")), { threshold: 0.12 });
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+}
+
 function Title({ h, p }: { h: string; p: string }) {
-  return <div className="mb-10 text-center"><h2 className="text-3xl font-extrabold text-primary md:text-4xl">{h}</h2><p className="mt-2 text-muted-foreground">{p}</p></div>;
+  return <div className="reveal mb-10 text-center"><h2 className="text-3xl font-extrabold text-primary md:text-4xl">{h}</h2><p className="mt-2 text-muted-foreground">{p}</p></div>;
 }
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return <label className="block"><span className="mb-1.5 block font-semibold">{label}</span>{children}</label>;
