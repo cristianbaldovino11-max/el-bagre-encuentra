@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type FormEvent, type MouseEvent, type ReactNode } from "react";
-import casaDosPisos from "@/assets/casa-dos-pisos.png";
+import casaArriendo from "@/assets/casa-arriendo-colonial.png.asset.json";
 import carroFamiliar from "@/assets/carro-familiar.png";
 import casaMetropolis from "@/assets/casa-metropolis.png.asset.json";
 import motoCargadora from "@/assets/moto-cargadora.png.asset.json";
@@ -8,6 +8,7 @@ import moto from "@/assets/moto-mandados.png";
 import motoBoxer from "@/assets/moto-boxer.png";
 import herramientas from "@/assets/herramientas-bagre.png";
 import mercado from "@/assets/mercado.png";
+import lavadora from "@/assets/lavadora.png";
 import canastaAbarrotes from "@/assets/canasta-abarrotes.png";
 const WHATSAPP = "573216072852";
 const SOCIAL = {
@@ -33,18 +34,19 @@ export const Route = createFileRoute("/")({
 
 type Cat = "todos" | "casas" | "arriendos" | "herramientas" | "vehiculos" | "mudanzas";
 const CATS: { id: Cat; label: string; img: string }[] = [
-  { id: "todos", label: "Todos", img: casaDosPisos },
+  { id: "todos", label: "Todos", img: casaArriendo.url },
   { id: "casas", label: "Casas en venta", img: casaMetropolis.url },
-  { id: "arriendos", label: "Arriendos", img: casaDosPisos },
+  { id: "arriendos", label: "Arriendos", img: casaArriendo.url },
   { id: "herramientas", label: "Herramientas", img: herramientas },
   { id: "vehiculos", label: "Carros y motos", img: carroFamiliar },
   { id: "mudanzas", label: "Mudanzas", img: motoCargadora.url },
 ];
 const ITEMS = [
   { cat: "casas", t: "Casa en el barrio Metrópolis", d: "Casa de tres pisos, amplia y bien ubicada, ideal para la familia.", p: "Desde $150.000.000", img: casaMetropolis.url },
-  { cat: "arriendos", t: "Casa de dos pisos para la familia", d: "Balcón amplio, 3 habitaciones, corredor y jardín, ideal para la familia.", p: "$800.000 / mes", img: casaDosPisos },
+  { cat: "arriendos", t: "Casa colonial para arriendo", d: "Casa amplia y bonita, con corredor, patio y jardín, lista para vivir en familia.", p: "$800.000 / mes", img: casaArriendo.url },
   { cat: "herramientas", t: "Guadaña y motobomba", d: "Para fincas, lotes y trabajos de campo.", p: "$50.000 / día", img: herramientas },
   { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
+  { cat: "herramientas", t: "Lavadora para alquilar", d: "Lavadora de carga frontal, limpia y lista para usar; la llevamos y la recogemos.", p: "$30.000 / día", img: lavadora },
   { cat: "vehiculos", t: "Carro familiar para paseos", d: "Camioneta gris cómoda y espaciosa, para paseos en familia.", p: "$180.000 / día", img: carroFamiliar },
   { cat: "vehiculos", t: "Moto de trabajo", d: "Económica y ágil, ideal para el pueblo.", p: "$50.000 / día", img: moto },
   { cat: "vehiculos", t: "Boxer CT negra", d: "Moto de trabajo fuerte y económica, para el pueblo y la finca.", p: "$50.000 / día", img: motoBoxer },
