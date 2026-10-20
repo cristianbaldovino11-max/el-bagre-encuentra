@@ -9,7 +9,6 @@ import motoBoxer from "@/assets/moto-boxer.png";
 import herramientas from "@/assets/herramientas-bagre.png";
 import mercado from "@/assets/mercado.png";
 import canastaAbarrotes from "@/assets/canasta-abarrotes.png";
-...
 const WHATSAPP = "573216072852";
 const SOCIAL = {
   facebook: "https://facebook.com/elbagreencuentra",
@@ -318,7 +317,7 @@ function Index() {
         <p className="mt-2">© {new Date().getFullYear()} El Bagre Encuentra. Todos los derechos reservados.</p>
       </footer>
 
-      <a href={wa("Hola, vengo de la página web")} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+      <a href={wa("Hola, quisiera más información")} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
         className={`${btn} fixed bottom-5 right-5 z-40 rounded-full bg-whatsapp text-primary-foreground shadow-3d`}><Icon name="wa" /> WhatsApp</a>
     </div>
   );
