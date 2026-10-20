@@ -8,11 +8,9 @@ import moto from "@/assets/moto-mandados.png";
 import motoBoxer from "@/assets/moto-boxer.png";
 import herramientas from "@/assets/herramientas-bagre.png";
 import mercado from "@/assets/mercado.png";
-import electro from "@/assets/electro.png";
-import moda from "@/assets/moda.png";
-
-// Cambia estos datos por los reales del negocio
-const WHATSAPP = "573001234567";
+import canastaAbarrotes from "@/assets/canasta-abarrotes.png";
+...
+const WHATSAPP = "573216072852";
 const SOCIAL = {
   facebook: "https://facebook.com/elbagreencuentra",
   instagram: "https://instagram.com/elbagreencuentra",
@@ -57,11 +55,7 @@ const ITEMS = [
 const PCATS = ["Todos", "Mercado", "Tecnología y hogar", "Moda y estilo"] as const;
 const PRODUCTS = [
   { c: "Mercado", t: "Mercado completo", d: "Arroz, café, frutas y verduras frescas.", p: "$120.000", img: mercado },
-  { c: "Mercado", t: "Canasta de frutas", d: "Selección de temporada.", p: "$35.000", img: mercado },
-  { c: "Tecnología y hogar", t: "Ventilador de pie", d: "Ideal para el calor bagreño.", p: "$160.000", img: electro },
-  { c: "Tecnología y hogar", t: "Combo hogar", d: "Licuadora, TV y celular.", p: "Consultar", img: electro },
-  { c: "Moda y estilo", t: "Tenis y ropa", d: "Lo último en tendencia.", p: "Desde $90.000", img: moda },
-  { c: "Moda y estilo", t: "Perfumes y accesorios", d: "Regalos con buen gusto.", p: "Desde $60.000", img: moda },
+  { c: "Mercado", t: "Canasta de abarrotes", d: "Arroz, café, huevos, aceite, panela y plátano.", p: "$85.000", img: canastaAbarrotes },
 ];
 
 const FAQ = [
