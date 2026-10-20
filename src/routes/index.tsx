@@ -42,7 +42,7 @@ const CATS: { id: Cat; label: string; img: string }[] = [
 ];
 const ITEMS = [
   { cat: "casas", t: "Casa en el barrio Metrópolis", d: "Casa de tres pisos, amplia y bien ubicada, ideal para la familia.", p: "Desde $150.000.000", img: casaMetropolis.url },
-  { cat: "arriendos", t: "Casa de dos pisos para la familia", d: "Balcón amplio, 3 habitaciones, corredor y jardín, ideal para la familia.", p: "$800.000 / mes", img: casaDosPisos },
+  { cat: "arriendos", t: "Casa colonial para arriendo", d: "Casa amplia y bonita, con corredor, patio y jardín, lista para vivir en familia.", p: "$800.000 / mes", img: casaArriendo.url },
   { cat: "herramientas", t: "Guadaña y motobomba", d: "Para fincas, lotes y trabajos de campo.", p: "$50.000 / día", img: herramientas },
   { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
   { cat: "vehiculos", t: "Carro familiar para paseos", d: "Camioneta gris cómoda y espaciosa, para paseos en familia.", p: "$180.000 / día", img: carroFamiliar },
