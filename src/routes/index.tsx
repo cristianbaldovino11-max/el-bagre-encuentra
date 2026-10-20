@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type FormEvent, type MouseEvent, type ReactNode } from "react";
 import casaDosPisos from "@/assets/casa-dos-pisos.png";
 import carroFamiliar from "@/assets/carro-familiar.png";
-import casa from "@/assets/casa-bagre.png";
+import casaMetropolis from "@/assets/casa-metropolis.png.asset.json";
 import camion from "@/assets/camion.png";
 import moto from "@/assets/moto-mandados.png";
 import motoBoxer from "@/assets/moto-boxer.png";
@@ -34,14 +34,14 @@ export const Route = createFileRoute("/")({
 type Cat = "todos" | "casas" | "arriendos" | "herramientas" | "vehiculos" | "mudanzas";
 const CATS: { id: Cat; label: string; img: string }[] = [
   { id: "todos", label: "Todos", img: casaDosPisos },
-  { id: "casas", label: "Casas en venta", img: casa },
+  { id: "casas", label: "Casas en venta", img: casaMetropolis.url },
   { id: "arriendos", label: "Arriendos", img: casaDosPisos },
   { id: "herramientas", label: "Herramientas", img: herramientas },
   { id: "vehiculos", label: "Carros y motos", img: carroFamiliar },
   { id: "mudanzas", label: "Mudanzas", img: camion },
 ];
 const ITEMS = [
-  { cat: "casas", t: "Casa bagreña en el centro", d: "3 habitaciones, corredor amplio y techo en zinc.", p: "Desde $150.000.000", img: casa },
+  { cat: "casas", t: "Casa en el barrio Metrópolis", d: "Casa de tres pisos, amplia y bien ubicada, ideal para la familia.", p: "Desde $150.000.000", img: casaMetropolis.url },
   { cat: "arriendos", t: "Casa de dos pisos para la familia", d: "Balcón amplio, 3 habitaciones, corredor y jardín, ideal para la familia.", p: "$800.000 / mes", img: casaDosPisos },
   { cat: "herramientas", t: "Guadaña y motobomba", d: "Para fincas, lotes y trabajos de campo.", p: "$50.000 / día", img: herramientas },
   { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
@@ -140,7 +140,7 @@ function Index() {
             <div className="mt-8"><Socials /></div>
           </div>
           <div className="relative grid grid-cols-2 gap-4">
-            {[casa, camion, moto, herramientas].map((src, i) => (
+            {[casaMetropolis.url, camion, moto, herramientas].map((src, i) => (
               <Tilt key={i} className="glass rounded-3xl p-3 shadow-3d">
                 <img src={src} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" style={{ animationDelay: `${i * 0.8}s` }} />
               </Tilt>
