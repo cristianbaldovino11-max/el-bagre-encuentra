@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState, type FormEvent, type MouseEvent, 
 import casaDosPisos from "@/assets/casa-dos-pisos.png";
 import carroFamiliar from "@/assets/carro-familiar.png";
 import casaMetropolis from "@/assets/casa-metropolis.png.asset.json";
-import camion from "@/assets/camion.png";
+import motoCargadora from "@/assets/moto-cargadora.png.asset.json";
 import moto from "@/assets/moto-mandados.png";
 import motoBoxer from "@/assets/moto-boxer.png";
 import herramientas from "@/assets/herramientas-bagre.png";
@@ -38,7 +38,7 @@ const CATS: { id: Cat; label: string; img: string }[] = [
   { id: "arriendos", label: "Arriendos", img: casaDosPisos },
   { id: "herramientas", label: "Herramientas", img: herramientas },
   { id: "vehiculos", label: "Carros y motos", img: carroFamiliar },
-  { id: "mudanzas", label: "Mudanzas", img: camion },
+  { id: "mudanzas", label: "Mudanzas", img: motoCargadora.url },
 ];
 const ITEMS = [
   { cat: "casas", t: "Casa en el barrio Metrópolis", d: "Casa de tres pisos, amplia y bien ubicada, ideal para la familia.", p: "Desde $150.000.000", img: casaMetropolis.url },
@@ -48,7 +48,7 @@ const ITEMS = [
   { cat: "vehiculos", t: "Carro familiar para paseos", d: "Camioneta gris cómoda y espaciosa, para paseos en familia.", p: "$180.000 / día", img: carroFamiliar },
   { cat: "vehiculos", t: "Moto de trabajo", d: "Económica y ágil, ideal para el pueblo.", p: "$50.000 / día", img: moto },
   { cat: "vehiculos", t: "Boxer CT negra", d: "Moto de trabajo fuerte y económica, para el pueblo y la finca.", p: "$50.000 / día", img: motoBoxer },
-  { cat: "mudanzas", t: "Camión para mudanzas", d: "Trasteos locales y a otros municipios, con ayudantes.", p: "Desde $250.000", img: camion },
+  { cat: "mudanzas", t: "Moto cargadora para mudanzas", d: "Moto cargadora de tres ruedas para trasteos y cargues locales, con ayudante.", p: "Desde $250.000", img: motoCargadora.url },
 ];
 
 const PCATS = ["Todos", "Mercado", "Tecnología y hogar", "Moda y estilo"] as const;
@@ -140,7 +140,7 @@ function Index() {
             <div className="mt-8"><Socials /></div>
           </div>
           <div className="relative grid grid-cols-2 gap-4">
-            {[casaMetropolis.url, camion, moto, herramientas].map((src, i) => (
+            {[casaMetropolis.url, motoCargadora.url, moto, herramientas].map((src, i) => (
               <Tilt key={i} className="glass rounded-3xl p-3 shadow-3d">
                 <img src={src} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" style={{ animationDelay: `${i * 0.8}s` }} />
               </Tilt>
