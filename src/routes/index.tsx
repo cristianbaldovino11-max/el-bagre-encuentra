@@ -48,7 +48,7 @@ const ITEMS = [
   { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
   { cat: "herramientas", t: "Lavadora para alquilar", d: "Lavadora de carga frontal, limpia y lista para usar; la llevamos y la recogemos.", p: "$30.000 / día", img: lavadora },
   { cat: "vehiculos", t: "Carro familiar para paseos", d: "Camioneta gris cómoda y espaciosa, para paseos en familia.", p: "$180.000 / día", img: carroFamiliar },
-  { cat: "vehiculos", t: "Moto de trabajo", d: "Económica y ágil, ideal para el pueblo.", p: "$50.000 / día", img: moto },
+  { cat: "vehiculos", t: "Moto de trabajo para pedidos", d: "Moto ágil con caja de delivery, para domicilios y mandados rápidos por todo El Bagre.", p: "$50.000 / día", img: moto },
   { cat: "vehiculos", t: "Boxer CT negra", d: "Moto de trabajo fuerte y económica, para el pueblo y la finca.", p: "$50.000 / día", img: motoBoxer },
   { cat: "mudanzas", t: "Moto cargadora para mudanzas", d: "Moto cargadora de tres ruedas para trasteos y cargues locales, con ayudante.", p: "Desde $250.000", img: motoCargadora.url },
 ];
