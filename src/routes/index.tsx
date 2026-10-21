@@ -142,17 +142,19 @@ function Index() {
             <div className="mt-8"><Socials /></div>
           </div>
           <div className="relative grid grid-cols-2 gap-4">
-            {[
-              { src: casaMetropolis.url, wide: false },
-              { src: motoCargadora.url, wide: false },
-              { src: moto, wide: false },
-              { src: camion, wide: false },
-              { src: herramientas, wide: true },
-            ].map((x, i) => (
-              <Tilt key={i} className={`glass rounded-3xl p-3 shadow-3d ${x.wide ? "col-span-2" : ""}`}>
-                <img src={x.src} alt="" width={1024} height={1024} className={`float-3d drop-shadow-2xl ${x.wide ? "mx-auto max-h-56 w-auto" : ""}`} style={{ animationDelay: `${i * 0.8}s` }} />
-              </Tilt>
-            ))}
+            <Tilt className="glass rounded-3xl p-3 shadow-3d">
+              <img src={casaMetropolis.url} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" />
+            </Tilt>
+            <Tilt className="glass flex flex-col rounded-3xl p-3 shadow-3d">
+              <img src={motoCargadora.url} alt="Moto cargadora" className="w-full rounded-xl object-cover" />
+              <img src={camion} alt="Carro de mudanzas" width={1024} height={1024} className="float-3d mt-2 flex-1 min-h-0 w-auto max-w-full self-center object-contain drop-shadow-2xl" />
+            </Tilt>
+            <Tilt className="glass rounded-3xl p-3 shadow-3d">
+              <img src={moto} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" />
+            </Tilt>
+            <Tilt className="glass rounded-3xl p-3 shadow-3d">
+              <img src={herramientas} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" />
+            </Tilt>
           </div>
         </div>
       </section>
