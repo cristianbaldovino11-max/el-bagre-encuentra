@@ -101,7 +101,6 @@ function Index() {
   const [cat, setCat] = useState<Cat>("todos");
   const [open, setOpen] = useState<number | null>(0);
   useReveal();
-  const [pc, setPc] = useState<(typeof PCATS)[number]>("Todos");
   const list = useMemo(
     () => ITEMS.filter((i) => cat === "todos" || i.cat === cat),
     [cat],
