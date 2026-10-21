@@ -99,13 +99,12 @@ const btn = "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 
 
 function Index() {
   const [cat, setCat] = useState<Cat>("todos");
-  const [q, setQ] = useState("");
   const [open, setOpen] = useState<number | null>(0);
   useReveal();
   const [pc, setPc] = useState<(typeof PCATS)[number]>("Todos");
   const list = useMemo(
-    () => ITEMS.filter((i) => (cat === "todos" || i.cat === cat) && (i.t + i.d).toLowerCase().includes(q.toLowerCase())),
-    [cat, q],
+    () => ITEMS.filter((i) => cat === "todos" || i.cat === cat),
+    [cat],
   );
 
   const submit = (e: FormEvent<HTMLFormElement>) => {
@@ -175,12 +174,6 @@ function Index() {
       <section id="catalogo" className="bg-card py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Title h="Encuentra tu próxima oportunidad" p="Consulta, pregunta y recibe orientación personalizada." />
-          <div className="mx-auto mb-8 flex max-w-3xl flex-wrap gap-3">
-            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar casa, moto, taladro..." className="min-w-52 flex-[2] rounded-xl border bg-background px-4 py-3" />
-            <select value={cat} onChange={(e) => setCat(e.target.value as Cat)} className="min-w-44 flex-1 rounded-xl border bg-background px-4 py-3">
-              {CATS.map((c) => <option key={c.id} value={c.id}>{c.id === "todos" ? "Todas las categorías" : c.label}</option>)}
-            </select>
-          </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {list.length === 0 && <p className="col-span-full py-8 text-center text-muted-foreground">No encontramos resultados. ¡Escríbenos y lo buscamos por ti!</p>}
             {list.map((i) => (
