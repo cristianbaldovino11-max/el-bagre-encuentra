@@ -146,7 +146,7 @@ function Index() {
               <img src={casaMetropolis.url} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" />
             </Tilt>
             <Tilt className="glass flex flex-col rounded-3xl p-3 shadow-3d">
-              <img src={motoCargadora.url} alt="Moto cargadora" className="w-full rounded-xl object-cover" />
+              <img src={motoCargadora.url} alt="Moto cargadora" className="float-3d w-full rounded-xl object-cover" />
               <img src={camion} alt="Carro de mudanzas" width={1024} height={1024} className="float-3d mt-2 flex-1 min-h-0 w-auto max-w-full self-center object-contain drop-shadow-2xl" />
             </Tilt>
             <Tilt className="glass rounded-3xl p-3 shadow-3d">
