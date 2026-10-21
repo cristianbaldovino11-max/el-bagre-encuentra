@@ -142,9 +142,15 @@ function Index() {
             <div className="mt-8"><Socials /></div>
           </div>
           <div className="relative grid grid-cols-2 gap-4">
-            {[casaMetropolis.url, motoCargadora.url, moto, herramientas].map((src, i) => (
-              <Tilt key={i} className="glass rounded-3xl p-3 shadow-3d">
-                <img src={src} alt="" width={1024} height={1024} className="float-3d drop-shadow-2xl" style={{ animationDelay: `${i * 0.8}s` }} />
+            {[
+              { src: casaMetropolis.url, wide: false },
+              { src: motoCargadora.url, wide: false },
+              { src: moto, wide: false },
+              { src: camion, wide: false },
+              { src: herramientas, wide: true },
+            ].map((x, i) => (
+              <Tilt key={i} className={`glass rounded-3xl p-3 shadow-3d ${x.wide ? "col-span-2" : ""}`}>
+                <img src={x.src} alt="" width={1024} height={1024} className={`float-3d drop-shadow-2xl ${x.wide ? "mx-auto max-h-56 w-auto" : ""}`} style={{ animationDelay: `${i * 0.8}s` }} />
               </Tilt>
             ))}
           </div>
