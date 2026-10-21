@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type FormEvent, type MouseEvent, type ReactNode } from "react";
 import casaArriendo from "@/assets/casa-arriendo-colonial.png.asset.json";
+import camion from "@/assets/camion.png";
 import carroFamiliar from "@/assets/carro-familiar.png";
 import casaMetropolis from "@/assets/casa-metropolis.png.asset.json";
 import motoCargadora from "@/assets/moto-cargadora.png.asset.json";
