@@ -54,7 +54,6 @@ const ITEMS = [
   { cat: "mudanzas", t: "Moto cargadora para mudanzas", d: "Moto cargadora de tres ruedas para trasteos y cargues locales, con ayudante.", p: "Desde $250.000", img: motoCargadora.url },
 ];
 
-const PCATS = ["Todos", "Mercado", "Tecnología y hogar", "Moda y estilo"] as const;
 const PRODUCTS = [
   { c: "Mercado", t: "Mercado completo", d: "Arroz, café, frutas y verduras frescas.", p: "$120.000", img: mercado },
   { c: "Mercado", t: "Canasta de abarrotes", d: "Arroz, café, huevos, aceite, panela y plátano.", p: "$85.000", img: canastaAbarrotes },
