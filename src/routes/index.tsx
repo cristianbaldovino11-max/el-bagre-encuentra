@@ -296,13 +296,13 @@ function Index() {
         </div>
       </section>
 
-      <section id="contacto" className="py-16 text-center">
+      <section id="contacto" className="flex min-h-[calc(100svh-4rem)] items-center justify-center py-16 text-center">
         <div className="mx-auto max-w-3xl px-5">
-          <h2 className="text-3xl font-extrabold text-primary">¡Hagamos negocios en El Bagre!</h2>
-          <p className="my-4 text-muted-foreground">¿Tienes una casa para vender, una vivienda para arrendar o herramientas y vehículos para alquilar?</p>
-          <a href={wa("Hola, quiero publicar mi anuncio")} target="_blank" rel="noopener noreferrer" className={`${btn} bg-gold text-accent-foreground shadow-gold`}>Quiero publicar mi anuncio</a>
-          <p className="mt-6 font-semibold">📍 El Bagre, Antioquia, Colombia</p>
-          <div className="mt-6 flex justify-center"><Socials /></div>
+          <h2 className="text-4xl font-extrabold text-primary md:text-5xl">¡Hagamos negocios en El Bagre!</h2>
+          <p className="my-6 text-lg text-muted-foreground md:text-xl">¿Tienes una casa para vender, una vivienda para arrendar o herramientas y vehículos para alquilar?</p>
+          <a href={wa("Hola, quiero publicar mi anuncio")} target="_blank" rel="noopener noreferrer" className={`${btn} px-8 py-4 text-lg bg-gold text-accent-foreground shadow-gold`}>Quiero publicar mi anuncio</a>
+          <p className="mt-8 text-lg font-semibold">📍 El Bagre, Antioquia, Colombia</p>
+          <div className="mt-8 flex justify-center"><Socials /></div>
         </div>
       </section>
 
