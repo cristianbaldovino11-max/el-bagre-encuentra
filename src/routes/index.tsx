@@ -102,7 +102,7 @@ const btn = "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 
 function Index() {
   const [cat, setCat] = useState<Cat>("todos");
   const [open, setOpen] = useState<number | null>(0);
-  useReveal();
+  useReveal(cat);
   const list = useMemo(
     () => ITEMS.filter((i) => cat === "todos" || i.cat === cat),
     [cat],
@@ -335,13 +335,13 @@ function Tilt({ children, className = "" }: { children: ReactNode; className?: s
   return <div ref={ref} onMouseMove={move} onMouseLeave={leave} className={`tilt-3d ${className}`}>{children}</div>;
 }
 
-function useReveal() {
+function useReveal(key?: unknown) {
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && e.target.classList.add("is-visible")), { threshold: 0.12 });
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, []);
+  }, [key]);
 }
 
 function Title({ h, p }: { h: string; p: string }) {
