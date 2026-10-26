@@ -8,6 +8,7 @@ import motoCargadora from "@/assets/moto-cargadora.png.asset.json";
 import moto from "@/assets/moto-mandados.png";
 import motoBoxer from "@/assets/moto-boxer.png";
 import herramientas from "@/assets/herramientas-bagre.png";
+import bebidas from "@/assets/bebidas.png";
 import canastaFrutas from "@/assets/canasta-frutas.png";
 import lavadora from "@/assets/lavadora.png";
 import canastaAbarrotes from "@/assets/canasta-abarrotes.png";
@@ -57,6 +58,7 @@ const ITEMS = [
 const PRODUCTS = [
   { c: "Mercado", t: "Canasta de frutas", d: "Frutas frescas de la región: banano, naranja, fresa, uvas y más.", p: "$70.000", img: canastaFrutas },
   { c: "Mercado", t: "Canasta de abarrotes", d: "Arroz, café, huevos, aceite, panela y plátano.", p: "$85.000", img: canastaAbarrotes },
+  { c: "Bebidas", t: "Bebidas refrescantes", d: "Sabores deliciosos bien fríos que dan sed de solo verlos: lulo, mora, mango y piña.", p: "Desde $15.000", img: bebidas },
 ];
 
 const FAQ = [
