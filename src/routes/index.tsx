@@ -222,13 +222,8 @@ function Index() {
       <section id="productos" className="py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Title h="Catálogo de productos" p="Productos seleccionados para clientes de buen gusto." />
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
-            {PCATS.map((c) => (
-              <button key={c} onClick={() => setPc(c)} className={`rounded-full border px-5 py-2 text-sm font-semibold transition ${pc === c ? "bg-primary text-primary-foreground" : "bg-card hover:bg-muted"}`}>{c}</button>
-            ))}
-          </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {PRODUCTS.filter((x) => pc === "Todos" || x.c === pc).map((x) => (
+            {PRODUCTS.map((x) => (
               <Tilt key={x.t}><article className="group flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-3d">
                 <div className="bg-card3d relative grid h-48 place-items-center p-3">
                   <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">{x.c}</span>
