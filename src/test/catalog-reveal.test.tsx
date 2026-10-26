@@ -31,10 +31,12 @@ describe("Anuncios: las tarjetas se muestran al filtrar por categoría", () => {
     const { container } = render(<Index />);
     const cards = () => Array.from(container.querySelectorAll("#catalogo article"));
 
-    fireEvent.click(screen.getByRole("button", { name: "Herramientas" }));
-    fireEvent.click(screen.getByRole("button", { name: "Todos" }));
+    fireEvent.click(screen.getByText("Herramientas"));
+    expect(cards()).toHaveLength(3);
 
+    fireEvent.click(screen.getByText("Todos"));
     expect(cards()).toHaveLength(9);
+
     for (const card of cards()) {
       expect(card.closest(".reveal")).toHaveClass("is-visible");
     }
