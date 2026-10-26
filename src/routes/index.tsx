@@ -47,7 +47,7 @@ const ITEMS = [
   { cat: "casas", t: "Casa en el barrio Metrópolis", d: "Casa de tres pisos, amplia y bien ubicada, ideal para la familia.", p: "Desde $150.000.000", img: casaMetropolis.url },
   { cat: "arriendos", t: "Casa en el casco urbano", d: "Casa amplia y bonita, con corredor, patio y jardín, lista para vivir en familia.", p: "$800.000 / mes", img: casaArriendo.url },
   { cat: "herramientas", t: "Guadaña y motobomba", d: "Para fincas, lotes y trabajos de campo; el valor depende del trabajo.", p: "Desde $75.000", img: herramientas },
-  { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
+  { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$95.000 / día", img: herramientas },
   { cat: "herramientas", t: "Lavadora para alquilar", d: "Lavadora de carga frontal, limpia y lista para usar; la llevamos y la recogemos.", p: "$35.000 / día", img: lavadora },
   { cat: "vehiculos", t: "Carro familiar para paseos", d: "Camioneta gris cómoda y espaciosa, para paseos en familia.", p: "$180.000 / día", img: carroFamiliar },
   { cat: "vehiculos", t: "Moto de trabajo para pedidos", d: "Moto ágil con caja de delivery, para domicilios y mandados rápidos por todo El Bagre.", p: "$50.000 / día", img: moto },
