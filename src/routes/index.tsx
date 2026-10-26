@@ -8,7 +8,7 @@ import motoCargadora from "@/assets/moto-cargadora.png.asset.json";
 import moto from "@/assets/moto-mandados.png";
 import motoBoxer from "@/assets/moto-boxer.png";
 import herramientas from "@/assets/herramientas-bagre.png";
-import mercado from "@/assets/mercado.png";
+import canastaFrutas from "@/assets/canasta-frutas.png";
 import lavadora from "@/assets/lavadora.png";
 import canastaAbarrotes from "@/assets/canasta-abarrotes.png";
 const WHATSAPP = "573216072852";
@@ -55,7 +55,7 @@ const ITEMS = [
 ];
 
 const PRODUCTS = [
-  { c: "Mercado", t: "Mercado completo", d: "Arroz, café, frutas y verduras frescas.", p: "$120.000", img: mercado },
+  { c: "Mercado", t: "Canasta de frutas", d: "Frutas frescas de la región: banano, naranja, fresa, uvas y más.", p: "$120.000", img: canastaFrutas },
   { c: "Mercado", t: "Canasta de abarrotes", d: "Arroz, café, huevos, aceite, panela y plátano.", p: "$85.000", img: canastaAbarrotes },
 ];
 
