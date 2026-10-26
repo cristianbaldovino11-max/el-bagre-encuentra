@@ -48,7 +48,7 @@ const ITEMS = [
   { cat: "arriendos", t: "Casa en el casco urbano", d: "Casa amplia y bonita, con corredor, patio y jardín, lista para vivir en familia.", p: "$800.000 / mes", img: casaArriendo.url },
   { cat: "herramientas", t: "Guadaña y motobomba", d: "Para fincas, lotes y trabajos de campo; el valor depende del trabajo.", p: "Desde $75.000", img: herramientas },
   { cat: "herramientas", t: "Kit de obra", d: "Pala, carretilla, machete y más.", p: "$25.000 / día", img: herramientas },
-  { cat: "herramientas", t: "Lavadora para alquilar", d: "Lavadora de carga frontal, limpia y lista para usar; la llevamos y la recogemos.", p: "$30.000 / día", img: lavadora },
+  { cat: "herramientas", t: "Lavadora para alquilar", d: "Lavadora de carga frontal, limpia y lista para usar; la llevamos y la recogemos.", p: "$35.000 / día", img: lavadora },
   { cat: "vehiculos", t: "Carro familiar para paseos", d: "Camioneta gris cómoda y espaciosa, para paseos en familia.", p: "$180.000 / día", img: carroFamiliar },
   { cat: "vehiculos", t: "Moto de trabajo para pedidos", d: "Moto ágil con caja de delivery, para domicilios y mandados rápidos por todo El Bagre.", p: "$50.000 / día", img: moto },
   { cat: "vehiculos", t: "Boxer CT negra para alquiler", d: "Moto de trabajo fuerte y económica, se alquila por día para el pueblo y la finca.", p: "$50.000 / día", img: motoBoxer },
