@@ -55,7 +55,7 @@ const ITEMS = [
 ];
 
 const PRODUCTS = [
-  { c: "Mercado", t: "Canasta de frutas", d: "Frutas frescas de la región: banano, naranja, fresa, uvas y más.", p: "$120.000", img: canastaFrutas },
+  { c: "Mercado", t: "Canasta de frutas", d: "Frutas frescas de la región: banano, naranja, fresa, uvas y más.", p: "$70.000", img: canastaFrutas },
   { c: "Mercado", t: "Canasta de abarrotes", d: "Arroz, café, huevos, aceite, panela y plátano.", p: "$85.000", img: canastaAbarrotes },
 ];
 
